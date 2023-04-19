@@ -1,8 +1,8 @@
 function palabraMasLarga(str) {
   const palabras = str.split(" ");
-  let palabraMasLarga = palabras[0];
-  for (let i = 1; i < palabras.length; i++) {
-    palabraMasLarga = palabraMasLarga.length > palabras[i].length ? palabraMasLarga : palabras[i];
+  let palabraMasLarga = palabras.shift();
+  for (const palabra of palabras) {
+    palabraMasLarga = palabraMasLarga.length > palabra.length ? palabraMasLarga : palabra;
   }
   return palabraMasLarga;
 }
