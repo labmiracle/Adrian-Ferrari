@@ -17,4 +17,4 @@ const carrito = {
   },
 };
 
-console.log(carrito.precioTotal);
+console.assert(carrito.precioTotal === 23);

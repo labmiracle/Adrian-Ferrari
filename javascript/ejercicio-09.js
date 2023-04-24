@@ -8,4 +8,4 @@ function addOnlyNums(...args) {
   return total;
 }
 
-console.log(addOnlyNums(2, "a", 3, "3", 4, 5, 6, 7));
+console.assert(addOnlyNums(2, "a", 3, "3", 4, 5, 6, 7) === 27);

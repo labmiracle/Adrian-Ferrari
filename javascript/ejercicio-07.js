@@ -8,4 +8,8 @@ function cc(card) {
   return `${count} ${count > 0 ? "Bet" : "Hold"}`;
 }
 
-console.log(cc(2), cc(3), cc(7), cc("K"), cc("A"));
+console.assert(cc(2) === "1 Bet");
+console.assert(cc(3) === "2 Bet");
+console.assert(cc(7) === "2 Bet");
+console.assert(cc("K") === "1 Bet");
+console.assert(cc("A") === "0 Hold");
