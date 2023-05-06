@@ -5,7 +5,14 @@ import sumArray from "./ejercicios/ej31.js";
 import bankAccount from "./ejercicios/ej32.js";
 import computeScore from "./ejercicios/ej33.js";
 import greet from "./ejercicios/ej34.js";
+import layEggs from "./ejercicios/ej35.js";
+import { capitalize, multiply } from "./ejercicios/ej36.js";
+import pushToCollection from "./ejercicios/ej37.js";
 import { comparaArrays } from "./utils.js";
+
+//Ejercicio 2.1
+
+console.log("[Ejercicio 2.1]");
 
 //Ejercicio 2.2
 
@@ -66,3 +73,31 @@ const defaultGreeting = greet();
 const portugueseGreeting = greet("Oi como vai!");
 
 console.log("[Ejercicio 3.4]", defaultGreeting, portugueseGreeting);
+
+//Ejercicio 3.5
+
+layEggs();
+
+//Ejercicio 3.6
+
+console.log("[Ejercicio 3.6]", capitalize(`habil ${multiply(5, 10)}`));
+
+//Ejercicio 3.7
+
+const numberCollection: number[] = [];
+const stringCollection: string[] = [];
+
+pushToCollection("false", stringCollection);
+pushToCollection("hi", stringCollection);
+pushToCollection("[]", stringCollection);
+
+pushToCollection(1, numberCollection);
+pushToCollection(2, numberCollection);
+pushToCollection(3, numberCollection);
+
+const incrementedByTwo = numberCollection.map(num => num + 2);
+
+console.log(
+    "[Ejercicio 3.7]",
+    `[${incrementedByTwo}] debe ser igual a [3,4,5]`
+);
