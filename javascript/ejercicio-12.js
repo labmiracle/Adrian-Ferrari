@@ -13,6 +13,7 @@ async function adivinar() {
     });
 
     if (numero === "exit") {
+      readline.close();
       return;
     }
     if (isNaN(Number(numero))) {
