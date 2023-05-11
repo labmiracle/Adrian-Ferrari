@@ -29,7 +29,6 @@ async function codeBreaker() {
       return;
     }
     const numeroArr = numero.split("");
-    console.log(numeroArr);
     if (isNaN(Number(numero))) {
       console.log("Error: Ingrese un numero");
     } else if (numero.length !== 4) {
