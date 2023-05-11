@@ -8,7 +8,9 @@ menos mientras se este utilizando ese mazo
 
 const baraja = [...Array(48)].map(
   function (e, i) {
+    // paloIndice => 0, 0, 0, ...12 veces 0, 12/12=1, 1, 1, ...12 veces 1, 2, 2, ...
     const paloIndice = Math.floor(i / 12);
+    //[oro, 0+1-0*12=1], [oro, 2], ... [oro, 12], [copa, 12+1-1*12=1], [copa, 2], ...
     return [this[paloIndice], i + 1 - paloIndice * 12];
   },
   ["Oro", "Copa", "Basto", "Espada"]
@@ -19,11 +21,13 @@ function juegoCarta(baraja, jugadores) {
   const cartasJugadores = [];
   for (let i = 0; i < jugadores; i++) {
     let carta = barajaMezclada.pop();
+    //push solo el numero de la carta
     cartasJugadores.push(carta[1]);
     console.log(`Jugador ${i + 1} saco`, carta);
   }
   const maxCarta = Math.max(...cartasJugadores);
   const jugadorGanador = cartasJugadores.indexOf(maxCarta) + 1;
+  //revisa si hay multiples cartas maximas
   const countGanador = cartasJugadores.reduce((acc, curr) => (curr === maxCarta ? acc + 1 : acc), 0);
   if (countGanador > 1) return console.log("Hubo un empate!");
   console.log("Gano el jugador", jugadorGanador);
