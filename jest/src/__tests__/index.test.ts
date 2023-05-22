@@ -5,6 +5,7 @@ import { sumaArr } from "../ej-14";
 import { repeatCharIndexFinder } from "../ej-15";
 import { findMaxConsecutiveOnes } from "../ej-16";
 import { lookup } from "../ej-17";
+import { addToCart, setPrice, Item } from "../ej-18";
 
 test("ejercicio 1.1", () => {
     expect(fizzBuzz(3)).toBe("Fizz");
@@ -95,5 +96,38 @@ describe("ejercicio 1.7: lookup()", () => {
         expect(() => {
             lookup("mfowler", "noprop");
         }).toThrow(/Could not find property/);
+    });
+});
+
+describe("ejercicio 1.8", () => {
+    it("setPrice() should set the price in the given item object, immutably.", () => {
+        const item: Item = {
+            name: "test",
+            price: 30,
+        };
+        const copy = Object.assign({}, item);
+
+        const actual = setPrice(item, 50);
+        const expected: Item = {
+            name: "test",
+            price: 50,
+        };
+
+        expect(actual).toEqual(expected);
+        expect(item).toEqual(copy);
+    });
+    it("addToCart() should add item to cart, immutably", () => {
+        const originalCart: Item[] = [];
+        const item: Item = {
+            name: "Toy",
+            price: 30,
+        };
+        const copy = originalCart.slice();
+
+        const actual = addToCart(originalCart, item);
+        const expected = [item];
+
+        expect(actual).toEqual(expected);
+        expect(originalCart).toEqual(copy);
     });
 });
