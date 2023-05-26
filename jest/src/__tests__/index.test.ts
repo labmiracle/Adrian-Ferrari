@@ -31,7 +31,7 @@ describe("ejercicio 1.3: devuelve cadena de ADN con valores canonicos unicamente
     expect(() => cadenaADN(0)).toThrow(/Argument must be a string/);
 });
 
-test("ejercicio 1.4: trata de sumar todos los numeros y cadenas de numberos de un arreglo", () => {
+test("ejercicio 1.4: trata de sumar todos los numeros y cadenas de numberos positivos de un arreglo", () => {
     expect(sumaArr(["A", 2, 3, true, false, "$$", "5", -4])).toBe(10);
     expect(sumaArr([])).toBe(0);
 });
@@ -50,7 +50,14 @@ describe("ejercicio 1.6: encuentra el numero maximo de 1s consecutivos", () => {
                 [1, 1, 0, 0],
                 ["1", 1, 0, 1],
             ])
-        ).toBe(4);
+        ).toBe(9);
+        expect(
+            findMaxConsecutiveOnes([
+                [1, 1, 0, 0, 0, 1],
+                [1, 1, 1, 1, 0, 1],
+                [1, 0, 0, 1, 0, 1],
+            ])
+        ).toBe(8);
     });
     it("should return -1 if any element of the matrix is neither 1 or 0", () => {
         expect(
@@ -62,13 +69,13 @@ describe("ejercicio 1.6: encuentra el numero maximo de 1s consecutivos", () => {
         expect(
             findMaxConsecutiveOnes([
                 ["A", 0],
-                [2, 1],
+                [0, 1],
             ])
         ).toBe(-1);
         expect(
             findMaxConsecutiveOnes([
                 [1, 10],
-                [2, 1],
+                [0, 1],
             ])
         ).toBe(-1);
     });
