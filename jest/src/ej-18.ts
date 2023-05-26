@@ -1,9 +1,9 @@
-// setPrice(item: Object, price: Number) => item: Object
 export type Item = {
     name: string;
     price: number;
 };
 
+// setPrice(item: Object, price: Number) => item: Object
 export const setPrice = (item: Item, price: number): Item => {
     return { ...item, price: price };
 };
