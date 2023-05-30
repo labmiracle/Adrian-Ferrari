@@ -1,0 +1,33 @@
+@use "functions";
+
+@mixin theme($primary, $secondary, $text, $background) {
+  background-color: $background;
+  & h1,
+  h2 {
+    color: $secondary;
+  }
+  & p {
+    color: $text;
+  }
+  & .article,
+  .main-article {
+    background-color: $primary;
+  }
+  & header {
+    background: linear-gradient(to right, $secondary, $primary);
+    & h1 {
+      color: #ededed;
+    }
+  }
+}
+
+@mixin mediaQuery($breakpoint) {
+  @media (min-width: $breakpoint) {
+    $column-number: functions.columnNumber($breakpoint);
+    @if ($column-number < 4) {
+      .articles-container {
+        columns: $column-number;
+      }
+    }
+  }
+}

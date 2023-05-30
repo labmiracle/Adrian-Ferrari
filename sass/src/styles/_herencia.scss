@@ -1,0 +1,18 @@
+.article {
+  border-radius: 8px;
+  padding: 5px 10px 15px 10px;
+  margin-bottom: 30px;
+  page-break-inside: avoid;
+  break-inside: avoid-column;
+  & h2 {
+    margin: 10px 5px;
+  }
+  & p {
+    margin: 5px;
+  }
+}
+
+.main-article {
+  @extend .article;
+  margin-bottom: 50px;
+}

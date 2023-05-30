@@ -1,0 +1,14 @@
+@use "sass:math";
+@use "sass:map";
+
+//se usa en mixins.scss > mediaQuery para calcular la cantidad de columnas en el que se divide la seccion de articulos
+@function columnNumber($breakpoint) {
+  $result: math.ceil(math.div($breakpoint, 400px));
+  @return $result;
+}
+
+//hace una lista para pasar como argumentos al mixin themes en main.scss
+@function makeList($theme) {
+  $list: map.get($theme, "primary"), map.get($theme, "secondary"), map.get($theme, "text"), map.get($theme, "background");
+  @return $list;
+}

@@ -1,0 +1,35 @@
+$breakpoints: 640px, 800px, 1000px, 1600px;
+
+$theme-sunrise: (
+  "name": theme-sunrise,
+  "primary": #ffdd80,
+  "secondary": #d984af,
+  "text": #57a198,
+  "background": #2d4e63,
+);
+
+$theme-red: (
+  "name": theme-red,
+  "primary": #070340,
+  "secondary": #de1436,
+  "text": #ededed,
+  "background": #424057,
+);
+
+$theme-light: (
+  "name": theme-light,
+  "primary": #ededed,
+  "secondary": #141414,
+  "text": #19191a,
+  "background": #ededed,
+);
+
+$theme-dark: (
+  "name": theme-dark,
+  "primary": #2b2b2b,
+  "secondary": #bbbac2,
+  "text": #ededed,
+  "background": #141414,
+);
+
+$themes: $theme-dark, $theme-light, $theme-red, $theme-sunrise;

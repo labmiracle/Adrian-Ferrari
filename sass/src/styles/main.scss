@@ -1,0 +1,41 @@
+@use "root";
+@use "variables";
+@use "nesting";
+@use "herencia";
+@use "mixins";
+@use "functions";
+@use "sass:map";
+
+body {
+  width: 100%;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+}
+
+.articles-container {
+  columns: 1;
+  column-gap: 20px;
+}
+
+//calcula la cantidad de columnas que tiene la seccion de articulos segun el width del viewport
+@each $breakpoint in variables.$breakpoints {
+  @include mixins.mediaQuery($breakpoint);
+}
+
+//genera las classes para los estilos de temas y sus respectivos botones
+@each $theme in variables.$themes {
+  $name: map.get($theme, "name");
+  $args: functions.makeList($theme);
+  .#{$name} {
+    @include mixins.theme($args...);
+  }
+  .#{$name}-btn {
+    color: map.get($theme, "secondary");
+    background-color: map.get($theme, "primary");
+    padding: 4px 8px;
+    margin: 30px 0;
+  }
+}
