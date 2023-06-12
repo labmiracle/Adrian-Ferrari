@@ -1,6 +1,6 @@
 import AtoB from "./AtoB";
 import Unmount from "./Unmount";
-import AdditionCalc from "./UpdatewithProps";
+import AdditionCalc from "./AdditionCalc";
 import AllTasks from "./AllTasks";
 import "./css/hooks.scss";
 
