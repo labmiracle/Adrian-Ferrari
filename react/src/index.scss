@@ -1,0 +1,38 @@
+:root {
+  --primary-color: #f4f4f4;
+  --secondary-color: black;
+  --button-color: #f38c95;
+}
+#root * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Caveat", cursive;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+button {
+  font-family: "Caveat", cursive;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border: dashed var(--button-color);
+  background-color: transparent;
+  cursor: pointer;
+  &:hover {
+    border: solid var(--button-color);
+    background-color: var(--button-color);
+  }
+  &:active {
+    background-color: transparent;
+  }
+}
+
+input {
+  background-color: transparent;
+  font-family: "Caveat", cursive;
+  font-size: 1em;
+  border: none;
+  border-bottom: 2px solid gray;
+}

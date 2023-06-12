@@ -1,0 +1,27 @@
+.circle {
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1/1;
+  max-width: 100px;
+  border-radius: 90%;
+  font-size: x-large;
+  margin-top: 20px;
+}
+
+.black {
+  background-color: black;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}

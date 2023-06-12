@@ -1,0 +1,23 @@
+.conditional {
+  width: 80%;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: min(4vw, 1em);
+  background-color: white;
+  border: dashed var(--button-color);
+  & button {
+    width: auto;
+  }
+}
+
+.conditional-login,
+.conditional-logged {
+  display: flex;
+  flex-direction: column;
+  & > button {
+    width: fit-content;
+    align-self: center;
+  }
+}

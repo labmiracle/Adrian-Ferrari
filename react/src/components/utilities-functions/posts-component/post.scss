@@ -1,0 +1,32 @@
+.post-container {
+  display: flex;
+  flex-flow: column;
+  border-bottom: 1px solid black;
+}
+
+.post {
+  flex: 1 1 60%;
+  & > h1,
+  & > p {
+    margin-top: 0;
+  }
+}
+
+.post-info {
+  flex: 1 1 auto;
+  margin: 0;
+  text-align: left;
+  & span {
+    color: red;
+  }
+}
+
+@media (min-width: 600px) {
+  .post-container {
+    flex-flow: row wrap;
+  }
+  .post-info {
+    text-align: center;
+    margin: auto;
+  }
+}

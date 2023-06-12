@@ -1,0 +1,9 @@
+.ref-container > form {
+  & > * {
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  & > button {
+    display: block;
+  }
+}

@@ -1,0 +1,19 @@
+.todo-list-container p {
+  margin: 19px 0;
+}
+.todo-list-container {
+  display: grid;
+  grid-template-columns: 50px minmax(min-content, 200px) max-content;
+  grid-template-rows: auto;
+  width: fit-content;
+  margin-top: 40px;
+}
+
+.todo-remove-btn {
+  display: flex;
+  align-items: center;
+}
+
+.todo-list-head {
+  border-bottom: 2px solid var(--secondary-color);
+}

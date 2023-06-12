@@ -1,0 +1,9 @@
+.json {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  & > button,
+  & > textarea {
+    width: fit-content;
+  }
+}

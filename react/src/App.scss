@@ -1,0 +1,64 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  min-width: 100%;
+  min-height: 100vh;
+  &-nav {
+    display: flex;
+    flex-flow: row wrap;
+    & > a {
+      text-decoration: none;
+      font-size: larger;
+      flex: 1 1 auto;
+      text-align: center;
+      padding: 0 5px;
+    }
+  }
+}
+
+.inactive {
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.active {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.outlet {
+  width: 100%;
+  min-height: calc(100vh - 34px);
+  margin: 0px;
+  background-image: url("/lines-paper-texture.jpg"), url("/lines-paper-texture-repeat.jpg");
+  background-position: left top, 650px top;
+  background-size: 650px auto, 533.1833px auto;
+  background-repeat: repeat-y, repeat;
+}
+
+.outlet-in-container {
+  margin-left: 140px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+
+@media (max-width: 540px) {
+  .outlet {
+    background-image: url("/lines-paper-texture-repeat.jpg");
+    background-position: left top;
+    background-size: contain auto;
+    background-repeat: repeat-y;
+  }
+  .outlet-in-container {
+    margin-left: 20px;
+  }
+}
+
+@media (min-width: 590px) {
+  .app-nav {
+    flex-flow: row nowrap;
+  }
+}

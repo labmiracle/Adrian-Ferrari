@@ -1,0 +1,17 @@
+$event-children: json, input, select;
+
+@each $name in $event-children {
+  .events-#{$name} {
+    width: 100%;
+    height: 100%;
+    & > p {
+      font-weight: 700;
+    }
+  }
+}
+
+.events {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
