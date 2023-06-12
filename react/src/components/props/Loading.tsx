@@ -30,7 +30,7 @@ export default function Loading({ isLoading }: { isLoading: boolean }) {
           <Text text={text} />
           <List items={items} />
           <div className="props-link">
-            <Link openInNewTab={true} />
+            <Link openInNewTab={openInNewTab} />
             <label htmlFor="props-checkbox">abrir en otra tab?</label>
             <input id="props-checkbox" type="checkbox" checked={openInNewTab} onChange={handleCheckbox} />
           </div>
