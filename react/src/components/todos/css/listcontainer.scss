@@ -1,12 +1,24 @@
 .todo-list-container p {
   margin: 19px 0;
 }
+
+$head: id, task, remove, notasks;
+
+@each $name in $head {
+  .todo-list-#{$name} {
+    grid-area: $name;
+  }
+}
+
 .todo-list-container {
   display: grid;
   grid-template-columns: 50px minmax(min-content, 200px) max-content;
   grid-template-rows: auto;
   width: fit-content;
   margin-top: 40px;
+  grid-template-areas:
+    "id task remove"
+    "notasks notasks notasks";
 }
 
 .todo-remove-btn {
