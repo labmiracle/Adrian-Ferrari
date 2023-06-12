@@ -5,7 +5,7 @@ export default function Caratula() {
     <main className="caratula">
       <h1>Trabajo Practico: React</h1>
       <div>
-        <p>para: MiracleDev</p>
+        <p>para: MiracleLab</p>
         <p>de: Adrian Ferrari</p>
       </div>
     </main>
