@@ -1,0 +1,17 @@
+:root {
+  color-scheme: light dark;
+  --primary-color: #8b8b8b;
+  --secondary-color: #c6c6c6;
+  background-color: var(--secondary-color);
+
+  font-family: "Silkscreen", cursive;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}

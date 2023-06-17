@@ -1,0 +1,59 @@
+$cell-size: 60px;
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  min-height: 100vh;
+  gap: 20px;
+  margin: auto;
+}
+
+.crafting-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.table-grid {
+  display: grid;
+  grid-template-columns: repeat(3, $cell-size);
+  grid-template-rows: repeat(3, $cell-size);
+  gap: 5px;
+}
+
+.ingredients,
+.craftables {
+  display: grid;
+  grid-template-columns: repeat(6, $cell-size);
+  grid-template-rows: auto;
+  gap: 5px;
+}
+
+.result {
+  height: $cell-size;
+  aspect-ratio: 1/1;
+}
+
+.arrow {
+  width: $cell-size;
+  aspect-ratio: 1/1;
+  color: var(--primary-color);
+}
+
+.section-title {
+  margin: 0;
+  align-self: flex-start;
+}
+
+.reset-table {
+  align-self: flex-start;
+  & button {
+    height: 40px;
+    font-size: 1em;
+    font: inherit;
+  }
+}
