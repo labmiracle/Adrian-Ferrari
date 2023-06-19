@@ -1,0 +1,28 @@
+.craft-img {
+  width: 48px;
+  height: 48px;
+  object-fit: none;
+  object-position: 0 0;
+}
+
+.tooltip {
+  display: grid;
+  grid-template-columns: repeat(3, 48px);
+  gap: 5px;
+  background-color: var(--tooltip-color);
+  padding: 5px;
+  position: absolute;
+  top: -50%;
+  left: 100%;
+  opacity: 0.85;
+  z-index: 1;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.craft-items {
+  position: relative;
+  &:hover .tooltip {
+    visibility: visible;
+  }
+}

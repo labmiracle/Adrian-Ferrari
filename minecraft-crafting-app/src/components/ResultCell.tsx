@@ -9,15 +9,15 @@ export default function ResultCell() {
   const sortedTableIngredients = [...ingredientsOnTable].sort();
 
   const result = craftables.find((craftable) => {
-    const sortedCraftIngredients = [...craftable.ingredients].sort();
-    return JSON.stringify(sortedTableIngredients) === JSON.stringify(sortedCraftIngredients);
+    return JSON.stringify(sortedTableIngredients) === JSON.stringify(craftable.materials);
   });
 
-  const nameID = result?.nameID;
+  const ingredientName = result?.nameID;
   const position = result?.position;
 
-  if (nameID && position) {
-    return <>{withImage({ GridCell, draggable: false, nameID, position })}</>;
+  if (ingredientName && position) {
+    const GridWithImage = withImage({ GridCell, isDraggable: false, ingredientName, position });
+    return <GridWithImage />;
   }
 
   return <GridCell>{}</GridCell>;

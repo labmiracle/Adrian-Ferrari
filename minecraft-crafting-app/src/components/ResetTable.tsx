@@ -2,10 +2,10 @@ import { DragDropContext } from "../context/DragDropContext";
 import { useContext } from "react";
 
 export default function ResetTable() {
-  const { resetTable } = useContext(DragDropContext);
+  const { setTable } = useContext(DragDropContext);
   return (
     <>
-      <button onClick={resetTable}>
+      <button onClick={() => setTable({ type: "INITIALIZE" })}>
         <span role="img" aria-label="clear">
           🚫
         </span>
