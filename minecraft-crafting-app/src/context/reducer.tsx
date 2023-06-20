@@ -7,22 +7,19 @@ export type ActionTypes =
   | { type: "ADD"; id: string; ingredient: IngredientsTypes | CraftablesTypes }
   | { type: "REMOVE"; id: string };
 
-export const initializer: JSX.Element[] = [
-  ...Array(9)
-    .fill(1)
-    .map((_, id) => {
-      const dropCellID = `cell-${id}`;
-      return (
-        <GridCell {...{ dropCellID }} key={dropCellID}>
-          {}
-        </GridCell>
-      );
-    }),
-];
+export const initializer: () => JSX.Element[] = () =>
+  [...Array(9)].fill(1).map((_, id) => {
+    const dropCellID = `cell-${id}`;
+    return (
+      <GridCell {...{ dropCellID }} key={dropCellID}>
+        {}
+      </GridCell>
+    );
+  });
 
 export function reducer(state: JSX.Element[], action: ActionTypes): JSX.Element[] {
   if (action.type === "INITIALIZE") {
-    return initializer;
+    return initializer();
   }
   if (action.type === "ADD") {
     return state.map((grid, id) => {

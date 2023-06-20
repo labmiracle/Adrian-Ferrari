@@ -18,7 +18,7 @@ export const DragDropContext = createContext<Context>({
 });
 
 export default function DragDropContextProvider({ children }: Children) {
-  const [table, setTable] = useReducer(reducer, initializer);
+  const [table, setTable] = useReducer(reducer, initializer());
   const [ingredientsOnTable, setIngredients] = useState<string[]>([]);
 
   useEffect(() => {
