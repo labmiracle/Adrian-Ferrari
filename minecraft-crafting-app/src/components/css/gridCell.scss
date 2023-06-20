@@ -9,6 +9,7 @@ $border-shadow: black;
   border-left: 2px solid $border-shadow;
   border-bottom: 2px solid $border-light;
   border-right: 2px solid $border-light;
+  user-select: none;
 }
 
 .dragover {
