@@ -11,7 +11,7 @@ export default function Craftables() {
     return (
       <div className="craft-items" key={i}>
         <CellWithImage />
-        <div className="tooltip" role="tooltip" aria-label="tooltip">
+        <div className="tooltip" role={`${nameID}-tooltip`}>
           {tooltip}
         </div>
       </div>
