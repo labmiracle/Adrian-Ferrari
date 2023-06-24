@@ -1,11 +1,11 @@
 import { craftables } from "../items/items";
 import { useContext } from "react";
 import { DragDropContext } from "../context/DragDropContext";
-import GridCell from "./GridCell";
+import GridCell from "./GridCell/GridCell";
 import withImage from "../hoc/withImage";
 
-export default function ResultCell() {
-  const { ingredientsOnTable } = useContext(DragDropContext);
+export default function ResultCell({ _DragDropContext = DragDropContext }) {
+  const { ingredientsOnTable } = useContext(_DragDropContext);
   const sortedTableIngredients = [...ingredientsOnTable].sort();
 
   const result = craftables.find((craftable) => {
