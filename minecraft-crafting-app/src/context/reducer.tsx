@@ -1,10 +1,10 @@
-import GridCell from "../components/GridCell";
+import GridCell from "../components/GridCell/GridCell";
 import withImage from "../hoc/withImage";
-import { CraftablesTypes, IngredientsTypes, getPosition, ingredients } from "../items/items";
+import { CraftablesNames, IngredientsNames, getPosition, ingredients } from "../items/items";
 
 export type ActionTypes =
   | { type: "INITIALIZE" }
-  | { type: "ADD"; id: string; ingredient: IngredientsTypes | CraftablesTypes }
+  | { type: "ADD"; id: string; ingredient: IngredientsNames | CraftablesNames }
   | { type: "REMOVE"; id: string };
 
 export const initializer: () => JSX.Element[] = () =>

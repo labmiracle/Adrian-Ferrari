@@ -1,4 +1,4 @@
-import { GridCellType } from "../components/GridCell";
+import { GridCellType } from "../components/GridCell/GridCell";
 import items from "../assets/items.png";
 import { DragDropContext } from "../context/DragDropContext";
 import { useContext } from "react";
