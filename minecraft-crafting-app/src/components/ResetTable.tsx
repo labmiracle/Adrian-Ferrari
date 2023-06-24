@@ -6,9 +6,7 @@ export default function ResetTable() {
   return (
     <>
       <button onClick={() => setTable({ type: "INITIALIZE" })}>
-        <span role="img" aria-label="clear">
-          🚫
-        </span>
+        <span role="img">🚫</span>
         Clear
       </button>
     </>
