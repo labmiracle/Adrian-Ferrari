@@ -2,10 +2,10 @@ import "./App.scss";
 import CraftingGrid from "./components/CraftingGrid";
 import Ingredients from "./components/Ingredients";
 import ResultCell from "./components/ResultCell";
-import Craftables from "./components/Craftables";
+import Craftables from "./components/Craftables/Craftables";
 import ResetTable from "./components/ResetTable";
 import DragDropContextProvider from "./context/DragDropContext";
-import { ReactComponent as Arrow } from "./assets/right-arrow.svg";
+import Arrow from "./components/Arrow";
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
           <div className="arrow">
             <Arrow />
           </div>
-          <div className="result">
+          <div className="result" role="result">
             <ResultCell />
           </div>
         </section>
@@ -27,11 +27,11 @@ function App() {
           <ResetTable />
         </div>
         <h1 className="section-title">Ingredients</h1>
-        <div className="ingredients">
+        <div className="ingredients" role="ingredients">
           <Ingredients />
         </div>
         <h1 className="section-title">Craftables</h1>
-        <div className="craftables">
+        <div className="craftables" role="craftables items">
           <Craftables />
         </div>
       </main>
