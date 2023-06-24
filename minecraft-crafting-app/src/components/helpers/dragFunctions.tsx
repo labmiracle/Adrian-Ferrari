@@ -1,5 +1,5 @@
 import { ActionTypes } from "../../context/reducer";
-import { CraftablesTypes, IngredientsTypes } from "../../items/items";
+import { CraftablesNames, IngredientsNames } from "../../items/items";
 
 function allowDrag<T extends HTMLElement>(event: React.DragEvent<T>, allow: boolean) {
   allow ? event.preventDefault() : null;
@@ -7,7 +7,7 @@ function allowDrag<T extends HTMLElement>(event: React.DragEvent<T>, allow: bool
 
 function onDrop<T extends HTMLElement>(event: React.DragEvent<T>, setTable: (value: ActionTypes) => void) {
   event.preventDefault();
-  const ingredientName = event.dataTransfer.getData("ingredientName") as IngredientsTypes | CraftablesTypes;
+  const ingredientName = event.dataTransfer.getData("ingredientName") as IngredientsNames | CraftablesNames;
   const targetCellId = event.currentTarget.id;
 
   if (event.currentTarget.classList.contains("dropzone")) {

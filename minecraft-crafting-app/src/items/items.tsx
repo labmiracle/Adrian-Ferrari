@@ -1,4 +1,4 @@
-export type IngredientsTypes =
+export type IngredientsNames =
   | "iron"
   | "stick"
   | "feather"
@@ -11,7 +11,7 @@ export type IngredientsTypes =
   | "choco-chips"
   | "wheat";
 
-export type CraftablesTypes =
+export type CraftablesNames =
   | "iron-helmet"
   | "chestplate"
   | "leggings"
@@ -30,13 +30,13 @@ export type CraftablesTypes =
   | "hoe"
   | "bow";
 
-export type Craftables = {
-  nameID: CraftablesTypes;
+export type CraftablesType = {
+  nameID: CraftablesNames;
   position: { x: number; y: number };
-  materials: IngredientsTypes[];
+  materials: IngredientsNames[];
 };
 
-export const craftables: Craftables[] = [
+export const craftables: CraftablesType[] = [
   {
     nameID: "iron-helmet",
     position: { x: 0, y: 0 },
@@ -124,12 +124,12 @@ export const craftables: Craftables[] = [
   },
 ];
 
-export type Ingredients = {
-  nameID: IngredientsTypes;
+export type IngredientsType = {
+  nameID: IngredientsNames;
   position: { x: number; y: number };
 };
 
-export const ingredients: Ingredients[] = [
+export const ingredients: IngredientsType[] = [
   {
     nameID: "iron",
     position: { x: 96, y: 48 },
@@ -176,14 +176,14 @@ export const ingredients: Ingredients[] = [
   },
 ];
 
-export type APosition<T extends IngredientsTypes | CraftablesTypes> = T extends IngredientsTypes
-  ? Ingredients[]
-  : Craftables[];
+export type APosition<T extends IngredientsNames | CraftablesNames> = T extends IngredientsNames
+  ? IngredientsType[]
+  : CraftablesType[];
 
-export function getPosition<T extends IngredientsTypes | CraftablesTypes>(name: T, array: APosition<T>) {
+export function getPosition<T extends IngredientsNames | CraftablesNames>(name: T, array: APosition<T>) {
   //arrFixed es para arreglar un bug de Typescript https://github.com/microsoft/TypeScript/issues/44373
   const arrFixed: Array<(typeof array)[number]> = array;
-  const item = arrFixed.find((item: Craftables | Ingredients) => item.nameID === name);
+  const item = arrFixed.find((item: CraftablesType | IngredientsType) => item.nameID === name);
   if (!item) return { x: 0, y: 0 };
   return item.position;
 }
