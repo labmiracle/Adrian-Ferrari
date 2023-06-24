@@ -1,7 +1,7 @@
-import { DragDropContext } from "../context/DragDropContext";
+import { DragDropContext } from "../../context/DragDropContext";
 import { useContext } from "react";
-import { allowDrag, onDrop, onDragLeave, onDragEnter } from "./helpers/dragFunctions";
-import "./css/gridCell.scss";
+import { allowDrag, onDrop, onDragLeave, onDragEnter } from "../helpers/dragFunctions";
+import "./gridCell.scss";
 
 export type GridCellType = {
   children: React.ReactNode | undefined;
@@ -21,6 +21,7 @@ export default function GridCell({ children, dropCellID }: GridCellType) {
       onDrop={(event) => onDrop(event, setTable)}
       onDragLeave={onDragLeave}
       onDragEnter={isADropCell ? onDragEnter : undefined}
+      aria-label={isADropCell ? dropCellID : undefined}
     >
       {children}
     </div>
