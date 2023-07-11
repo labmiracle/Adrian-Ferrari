@@ -4,12 +4,9 @@ los tipos de piedras preciosas que tenemos. La otra cadena reporesenta las piedr
 tipo que tenemos. Quieremos saber cuántas de las piedras son también joyas. 
 */
 
-function myFunction(joyas, piedras) {
-  const reg = new RegExp(`[${joyas}]`, "g");
-  return piedras.match(reg)?.length ?? 0;
+function piedrasYJoyas(joyas: string, piedras: string) {
+    const reg = new RegExp(`[${joyas}]`, "g");
+    return piedras.match(reg)?.length ?? 0;
 }
 
-console.assert(myFunction("aA", "aAAbbbb") === 3);
-console.assert(myFunction("z", "ZZ") === 0);
-
-export default myFunction;
+export default piedrasYJoyas;
