@@ -1,0 +1,207 @@
+{
+	"info": {
+		"_postman_id": "68d8fbea-64b5-41ee-96f6-13055e9790b9",
+		"name": "github",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28316895"
+	},
+	"item": [
+		{
+			"name": "Check Health",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Respuesta exitosa!\", function() {\r",
+							"pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/zen",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"zen"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/users/{{username}}",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"users",
+						"{{username}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get private user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/user",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create repo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"Hello-World\",\r\n    \"description\":\"This is your first repo!\",\r\n    \"private\":false\r\n}"
+				},
+				"url": {
+					"raw": "F/user/repos",
+					"host": [
+						"F"
+					],
+					"path": [
+						"user",
+						"repos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create issue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"Found a bug\",\r\n    \"body\":\"Im having a problem with this.\",\r\n    \"milestone\":1,\r\n    \"labels\":[\"bug\"]\r\n}"
+				},
+				"url": {
+					"raw": "{{url}}/repos/:owner/:reponame/issues",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":reponame",
+						"issues"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "{{username}}"
+						},
+						{
+							"key": "reponame",
+							"value": "{{repoName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete repo",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/repos/:owner/:repo",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"repos",
+						":owner",
+						":repo"
+					],
+					"variable": [
+						{
+							"key": "owner",
+							"value": "{{username}}"
+						},
+						{
+							"key": "repo",
+							"value": "{{repoName}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://api.github.com",
+			"type": "string"
+		},
+		{
+			"key": "username",
+			"value": "AdrianFerrari",
+			"type": "string"
+		},
+		{
+			"key": "repoName",
+			"value": "Hello-World",
+			"type": "string"
+		}
+	]
+}
