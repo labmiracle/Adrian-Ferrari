@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "terremotos": "node terremotos 1.0 week"
   },
   "author": "",
   "license": "ISC",
