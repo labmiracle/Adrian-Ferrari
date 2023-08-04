@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "build": "tsc -p tsconfig.json && node cpy.js",
+    "build": "tsc -p tsconfig.json && node cpy.cjs",
     "prestart": "npm install && npm run build",
     "start": "node ./build/index.js",
     "watch:dev": "tsc ./public/script.ts --watch",
